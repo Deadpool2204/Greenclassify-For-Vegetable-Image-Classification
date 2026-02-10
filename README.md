@@ -30,6 +30,10 @@ The model can classify the following vegetables:
 ## First step:
 Code files/Vegetable_Image_Classification go to this path and run this file which will create flask app folder in which the model and other congiure file is presented by the code
 
+## project code drive link:
+https://drive.google.com/drive/folders/1maBWF0ro3jl-pjLHmKPnXbkAcize1ibe?usp=drive_link
+
+
 ## 📋 Requirements
 
 - Python 3.8+
