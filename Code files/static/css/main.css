@@ -1,0 +1,399 @@
+/* ==================== Global Styles ==================== */
+:root {
+    --primary-color: #27ae60;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --danger-color: #e74c3c;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* ==================== Navigation ==================== */
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+    color: #fff;
+}
+
+/* ==================== Cards ==================== */
+.card {
+    border-radius: 20px !important;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.welcome-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+}
+
+.upload-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+}
+
+.success-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+}
+
+.error-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+}
+
+.logout-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+}
+
+/* ==================== Icons & Animations ==================== */
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    color: white;
+    box-shadow: var(--shadow);
+    animation: bounce 2s infinite;
+}
+
+.error-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8787);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.success-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* ==================== Features Grid ==================== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 30px;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.feature p {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+/* ==================== Upload Area ==================== */
+.upload-area {
+    border: 3px dashed var(--primary-color);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(135deg, #f5fff8 0%, #eef9f5 100%);
+    transition: var(--transition);
+    position: relative;
+}
+
+.upload-area:hover {
+    border-color: var(--secondary-color);
+    background: linear-gradient(135deg, #e8ffe8 0%, #d4f8e1 100%);
+    transform: scale(1.02);
+}
+
+.upload-area i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.upload-area input[type='file'] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-area p {
+    margin: 0;
+    color: var(--dark-color);
+}
+
+/* ==================== Preview Section ==================== */
+#previewSection {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.img-thumbnail {
+    border: 3px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 10px;
+    background: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==================== Buttons ==================== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    border: none;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+    background: linear-gradient(135deg, #229954, #28b463) !important;
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #95a5a6 !important;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: #7f8c8d !important;
+}
+
+.btn-lg {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+}
+
+.btn-submit {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s ease-in-out;
+}
+
+.btn-submit:hover::before {
+    left: 100%;
+}
+
+/* ==================== Progress Bar ==================== */
+.progress {
+    border-radius: 15px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 1s ease-in-out;
+}
+
+/* ==================== Result Section ==================== */
+.result-section {
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(46, 204, 113, 0.1));
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.confidence-section {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+/* ==================== Image Container ==================== */
+.image-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== Action Buttons ==================== */
+.action-buttons {
+    margin-top: 40px;
+}
+
+/* ==================== Footer ==================== */
+footer {
+    margin-top: auto;
+    background: linear-gradient(135deg, var(--dark-color), #34495e) !important;
+    border-top: 3px solid var(--primary-color);
+}
+
+footer p {
+    font-weight: 500;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+    }
+
+    .col-lg-8 {
+        padding: 0 15px;
+    }
+
+    .upload-area {
+        padding: 25px;
+    }
+
+    .upload-area i {
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .result-section {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .action-buttons .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+}
