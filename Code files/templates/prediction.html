@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - GreenClassify</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="/">
+                <i class="fas fa-leaf"></i> GreenClassify
+            </a>
+            <span class="navbar-text text-white">Intelligent Vegetable Recognition System</span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    {% if error %}
+                        <!-- Error State -->
+                        <div class="card shadow-lg border-0 error-card">
+                            <div class="card-body text-center py-5">
+                                <div class="error-icon mb-4">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <h2 class="card-title fw-bold mb-3">Oops! Something Went Wrong</h2>
+                                <p class="lead text-danger mb-4">{{ result }}</p>
+                                <a href="/" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-arrow-left"></i> Go Back
+                                </a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <!-- Success State -->
+                        <div class="card shadow-lg border-0 success-card mb-4">
+                            <div class="card-body p-5">
+                                <!-- Image Display -->
+                                {% if image_url %}
+                                    <div class="image-container mb-4">
+                                        <img src="{{ image_url }}" alt="Uploaded vegetable" class="img-fluid rounded-3" style="max-height: 400px; object-fit: cover;">
+                                    </div>
+                                {% endif %}
+
+                                <!-- Result Display -->
+                                <div class="result-section text-center mb-5">
+                                    <p class="text-muted mb-2">Prediction Result</p>
+                                    <h1 class="fw-bold mb-3" style="color: #27ae60; font-size: 3rem;">
+                                        <i class="fas fa-check-circle"></i> {{ result }}
+                                    </h1>
+                                    {% if confidence %}
+                                        <div class="confidence-section">
+                                            <p class="text-muted mb-2">Confidence Score</p>
+                                            <div class="progress mb-3" style="height: 30px;">
+                                                <div class="progress-bar bg-success" role="progressbar" 
+                                                     style="width: {{ confidence }}%;" 
+                                                     aria-valuenow="{{ confidence }}" 
+                                                     aria-valuemin="0" 
+                                                     aria-valuemax="100">
+                                                    <span class="fw-bold">{{ confidence }}%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="action-buttons">
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <a href="/" class="btn btn-primary btn-lg w-100">
+                                                <i class="fas fa-redo"></i> Try Another
+                                            </a>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <a href="/logout" class="btn btn-secondary btn-lg w-100">
+                                                <i class="fas fa-sign-out-alt"></i> Exit
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="mb-0">&copy; 2026 GreenClassify. Powered by TensorFlow & Flask.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
