@@ -28,7 +28,7 @@ The model can classify the following vegetables:
 - Lettuce
 
 ## First step:
-https://github.com/Deadpool2204/Greenclassify-For-Vegetable-Image-Classification/blob/main/Code%20files/Vegetable_Image_Classification%20(3).ipynb go to this path and run this file which will create flask app folder in which the model and other congiure file is presented by the code
+Code files/Vegetable_Image_Classification go to this path and run this file which will create flask app folder in which the model and other congiure file is presented by the code
 
 ## 📋 Requirements
 
